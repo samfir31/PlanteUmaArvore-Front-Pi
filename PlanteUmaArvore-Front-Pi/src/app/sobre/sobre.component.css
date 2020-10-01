@@ -1,11 +1,17 @@
-
+.container-fluid{
+  padding: 0%;
+}
 .parallax {
     background-image: url('https://i.imgur.com/HmxsfNO.jpg');
   
-    min-height: 500px;
+    min-height: 90vh;
   
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+.tamanhoImagem-90{
+  height: 90vh;
+}
