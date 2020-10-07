@@ -14,6 +14,10 @@ import { SobreComponent } from './sobre/sobre.component';
 import { ContatoComponent } from './contato/contato.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { FeedComponent } from './feed/feed.component';
+import { PostTemaComponent } from './post-tema/post-tema.component';
+import { OrderModule} from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,9 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     ContatoComponent,
     LoginComponent,
     CadastroComponent,
+    PerfilComponent,
+    FeedComponent,
+    PostTemaComponent,
   
   ],
   imports: [
@@ -32,7 +39,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
