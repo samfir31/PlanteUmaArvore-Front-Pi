@@ -2,9 +2,9 @@
   padding: 0%;
 }
 .parallax {
-    background-image: url('https://i.imgur.com/HmxsfNO.jpg');
+    background-image: url('https://i.imgur.com/5t9cjyJ.jpg');
   
-    min-height: 90vh;
+    min-height: 100vh;
   
     background-attachment: fixed;
     background-position: center;
@@ -14,4 +14,13 @@
 
 .tamanhoImagem-90{
   height: 90vh;
+}
+
+.carousel-caption.d-md-block {
+  display: block !important;
+}
+.carousel-caption.ll1{  
+    top: 0 !important;
+    bottom: auto !important;
+
 }
