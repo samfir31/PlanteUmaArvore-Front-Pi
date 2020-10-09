@@ -33,14 +33,14 @@
 
 
         <div class="col-md-6">
-          <form class=" form-inline">
+          <div class=" form-inline">
             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Privacidade</label>
             <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
               <option selected >Escolher...</option>
-              <option value="1" [(ngModel)]='postagem.privacidade'>Publico</option>
-              <option value="0" [(ngModel)]='postagem.privacidade'>Privado</option>
+              <option value="1">Publico</option>
+              <option value="0">Privado</option>
             </select>
-          </form>
+          </div>
         </div>
 
       </div>
@@ -79,12 +79,12 @@
           <div class="row">
             <div class="col-md-12">
 
-              <div class="card mt-5 mb-5" *ngFor="let item of listaPostagens | orderBy : key : reverse">
+              <div class="card mt-5 mb-5" *ngFor="let item of listaPostagens">
                 <div class="card-header">
                   <div class="row d-flex align-items-center">
                     <div class="col-md-8">
                       <h5 class="card-title"> Privado: {{item.privacidade}} </h5>
-                      <small>Tema: {{tema.nome}} </small>
+                      <small>Tema: {{item.tema.nome}} </small>
                     </div>
                     <div class="col-md-4 d-flex justify-content-end">
 
@@ -125,7 +125,7 @@
           </div>
 
           <div class="row">
-            <div class="col-md-12" *ngFor="let item of listaTemas | orderBy : key : reverse">
+            <div class="col-md-12" *ngFor="let item of listaTemas">
               <div *ngFor='let post of item.postagem'>
 
                 <div class="card mt-5 mb-5">

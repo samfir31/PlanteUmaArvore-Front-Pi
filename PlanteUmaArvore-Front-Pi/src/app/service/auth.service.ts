@@ -12,7 +12,7 @@ export class AuthService {
 
 
   logar(userLogin: UserLogin) {
-    return this.http.post('http://localhost:8080/usuarios/entrar', userLogin)
+    return this.http.post('http://localhost:8080/usuarios/logar', userLogin)
   }
 
 
