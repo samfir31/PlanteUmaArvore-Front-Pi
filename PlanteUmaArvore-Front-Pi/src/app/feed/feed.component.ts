@@ -18,12 +18,12 @@ export class FeedComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
-  titulo: string
+  privacidade: string
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
   idTema: number
-  nomeTema: string
+  
 
   constructor(
     private postagemService: PostagemService,
@@ -31,11 +31,11 @@ export class FeedComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
 
     let token = localStorage.token
 
-    if(token == '') {
+    if (token == '') {
       this.router.navigate(['/login'])
       alert('Faça o login antes de entrar no feed...')
     }
@@ -56,7 +56,7 @@ export class FeedComponent implements OnInit {
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
 
-    if (this.postagem.privacidade == null || this.postagem.descricao == null || this.postagem.tema == null) {
+    if (this.postagem.descricao == null || this.postagem.tema == null) {
       alert('Preencha todos os campos antes de publicar!')
     } else {
       this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
@@ -75,20 +75,18 @@ export class FeedComponent implements OnInit {
     })
   }
 
- findByIdTema() {
-   this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
-     this.tema = resp;
-   })
- }
+  findByIdTema() {
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
+      this.tema = resp;
+    })
+  }
 
- findByPrivacidadePostagem() {
-   if (this.titulo === ''){
-     this.findAllPostagens()
-   } else {
-     this.postagemService.getByPrivacidadePostagem(this.postagem.privacidade).subscribe((resp: Postagem[]) => {
-       this.listaPostagens = resp
-     })
-   }
- }
-
+/*findByPrivacidadePostagem() {
+  if (this.privacidade === ''){
+    this.findAllPostagens()
+  } else {
+    this.postagemService.getByPrivacidadePostagem(this.postagem.privacidade).subscribe((resp: Postagem[]) => {
+      this.listaPostagens = resp
+    })
+  }*/
 }
