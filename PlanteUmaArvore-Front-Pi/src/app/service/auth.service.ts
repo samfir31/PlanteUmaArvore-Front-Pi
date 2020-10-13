@@ -8,17 +8,17 @@ import { Usuario } from '../model/Usuario';
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) {}
-  
-
-    logar(userLogin: UserLogin){
-      return this.http.post('http://localhost:8080/usuarios/logar', userLogin)
-    }
+  constructor(private http: HttpClient) { }
 
 
-    cadastrar(usuario: Usuario){
+  logar(userLogin: UserLogin) {
+    return this.http.post('http://localhost:8080/usuarios/logar', userLogin)
+  }
+
+
+  cadastrar(usuario: Usuario) {
     return this.http.post('http://localhost:8080/usuarios/cadastrar', usuario)
 
 
-}
+  }
 }
