@@ -6,6 +6,8 @@ import { FeedComponent } from './feed/feed.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PostTemaComponent } from './post-tema/post-tema.component';
+import { PutPostagemComponent } from './put-postagem/put-postagem.component';
+import { PutTemaComponent } from './put-tema/put-tema.component';
 import { SobreComponent } from './sobre/sobre.component';
 
 const routes: Routes = [
@@ -16,7 +18,10 @@ const routes: Routes = [
   { path: 'sobre', component: SobreComponent},
   { path: 'contato', component: ContatoComponent},
   {path:  'feed', component: FeedComponent},
-  {path: 'cadastro-tema', component: PostTemaComponent}
+  {path: 'cadastro-tema', component: PostTemaComponent},
+  {path: 'editar-post/:id', component: PutPostagemComponent},
+  {path: 'editar-tema/:id', component: PutTemaComponent}
+  
   
 
 ];

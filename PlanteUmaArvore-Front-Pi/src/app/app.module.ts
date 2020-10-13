@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule} from '@angular/common/http'
-import { FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { OrderModule } from 'ngx-order-pipe';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,7 +18,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { FeedComponent } from './feed/feed.component';
 import { PostTemaComponent } from './post-tema/post-tema.component';
-import { OrderModule} from 'ngx-order-pipe';
+import { PutPostagemComponent } from './put-postagem/put-postagem.component';
+import { PutTemaComponent } from './put-tema/put-tema.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { OrderModule} from 'ngx-order-pipe';
     PerfilComponent,
     FeedComponent,
     PostTemaComponent,
-  
+    PutPostagemComponent,
+    PutTemaComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -41,6 +45,7 @@ import { OrderModule} from 'ngx-order-pipe';
     HttpClientModule,
     FormsModule,
     OrderModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
