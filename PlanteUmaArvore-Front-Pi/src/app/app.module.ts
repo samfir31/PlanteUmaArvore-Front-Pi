@@ -18,6 +18,10 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { FeedComponent } from './feed/feed.component';
 import { PostTemaComponent } from './post-tema/post-tema.component';
+import { PutPostagemComponent } from './put-postagem/put-postagem.component';
+import { PutTemaComponent } from './put-tema/put-tema.component';
+import { DeleteTemaComponent } from './delete-tema/delete-tema.component';
+import { DeletePostagemComponent } from './delete-postagem/delete-postagem.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,10 @@ import { PostTemaComponent } from './post-tema/post-tema.component';
     PerfilComponent,
     FeedComponent,
     PostTemaComponent,
+    PutPostagemComponent,
+    PutTemaComponent,
+    DeleteTemaComponent,
+    DeletePostagemComponent,
 
   ],
   imports: [

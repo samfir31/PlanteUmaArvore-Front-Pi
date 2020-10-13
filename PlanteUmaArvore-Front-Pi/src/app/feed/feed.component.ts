@@ -23,7 +23,7 @@ export class FeedComponent implements OnInit {
   tema: Tema = new Tema()
   listaTemas: Tema[]
   idTema: number
-  
+
 
   constructor(
     private postagemService: PostagemService,
@@ -81,12 +81,13 @@ export class FeedComponent implements OnInit {
     })
   }
 
-/*findByPrivacidadePostagem() {
-  if (this.privacidade === ''){
-    this.findAllPostagens()
-  } else {
-    this.postagemService.getByPrivacidadePostagem(this.postagem.privacidade).subscribe((resp: Postagem[]) => {
-      this.listaPostagens = resp
-    })
-  }*/
+  findByPrivacidadePostagem() {
+    if (this.privacidade === '') {
+      this.findAllPostagens()
+    } else {
+      this.postagemService.getByPrivacidadePostagem(this.postagem.privacidade).subscribe((resp: Postagem[]) => {
+        this.listaPostagens = resp
+      })
+    }
+  }
 }
