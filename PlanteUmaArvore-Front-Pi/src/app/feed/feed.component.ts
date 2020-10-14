@@ -18,7 +18,9 @@ export class FeedComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
-  privacidade: string
+  privacidade: boolean
+
+  
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
@@ -87,13 +89,15 @@ export class FeedComponent implements OnInit {
     })
   }
 
-  findByPrivacidadePostagem() {
-    if (this.privacidade === '') {
-      this.findAllPostagens()
+
+
+ /* findByPrivacidadePostagem() {
+    if (this.privacidade === true || this.privacidade === false  ) {
+      this.findByPrivacidadePostagem()
     } else {
       this.postagemService.getByPrivacidadePostagem(this.postagem.privacidade).subscribe((resp: Postagem[]) => {
         this.listaPostagens = resp
       })
     }
-  }
+  }*/
 }
