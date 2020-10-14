@@ -36,4 +36,17 @@ export class PostagemService {
     return this.http.get(`http://localhost:8080/postagens/privacidade/${privacidade}`, this.token)
 
   }
+
+  putPostagem(postagem: Postagem){
+
+    return this.http.put('http://localhost:8080/postagens', postagem, this.token)
+  }
+
+  deletePostagem(id: number) {
+    return this.http.delete(`http://localhost:8080/postagens/${id}`, this.token)
+  }
 }
+
+
+
+  
