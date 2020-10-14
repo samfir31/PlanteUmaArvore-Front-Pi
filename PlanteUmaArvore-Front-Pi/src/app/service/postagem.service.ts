@@ -27,6 +27,7 @@ export class PostagemService {
     return this.http.get(`http://localhost:8080/postagens/privacidade/${privacidade}`, this.token)
   }
 
+ 
   postPostagem(postagem: Postagem){
     return this.http.post('http://localhost:8080/postagens', postagem, this.token)
   }
