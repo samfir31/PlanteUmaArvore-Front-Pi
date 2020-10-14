@@ -23,6 +23,11 @@ export class FeedComponent implements OnInit {
   tema: Tema = new Tema()
   listaTemas: Tema[]
   idTema: number
+  nomeTema: string
+  
+
+
+  
 
 
   constructor(
@@ -53,9 +58,10 @@ export class FeedComponent implements OnInit {
   }
 
   publicar() {
+    console.log(this.idTema)
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
-
+    
     if (this.postagem.descricao == null || this.postagem.tema == null) {
       alert('Preencha todos os campos antes de publicar!')
     } else {

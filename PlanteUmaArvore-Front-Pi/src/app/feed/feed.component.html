@@ -22,8 +22,8 @@
         <div class="col-md-8">
           <div class="form-group m-0">
             <label class="text-monospace" for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um
-                novo</a></label>
-            <select name="tema" id='tema' class="form-control" (change)='findByIdTema()'>
+            <select name="tema" id='tema' class="form-control"[(ngModel)]='idTema' (change)='findByIdTema()'>
+
               <option *ngFor='let item of listaTemas' value={{item.id}}>
                 {{item.tema}}
               </option>
@@ -36,9 +36,9 @@
           <div class=" form-inline">
             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Privacidade</label>
             <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-              <option selected >Escolher...</option>
-              <option value="1">Publico</option>
-              <option value="0">Privado</option>
+              <option selected name="priv" id="priv" class="form-control" [(ngModel)]='privacidade'></option>
+              
+              
             </select>
           </div>
         </div>
@@ -84,7 +84,9 @@
                   <div class="row d-flex align-items-center">
                     <div class="col-md-8">
                       <h5 class="card-title"> Privado: {{item.privacidade}} </h5>
-                      <small>Tema: {{item.tema}} </small>
+
+                      <small>Tema: {{item.tema.nome}} </small>                      
+
                     </div>
                     <div class="col-md-4 d-flex justify-content-end">
 
@@ -102,8 +104,9 @@
                 </div>
 
                 <div class="card-body">
-                  <p class="card-text" aria-describedby="texto"> {{item.descricao}} </p>
-                  <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
+                    
+                   <p class="card-text" aria-describedby="texto"> {{item.descricao}} </p>
+                    <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
                     Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
                 </div>
               </div>

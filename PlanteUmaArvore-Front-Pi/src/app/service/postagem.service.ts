@@ -46,3 +46,7 @@ export class PostagemService {
     return this.http.delete(`http://localhost:8080/postagens/${id}`, this.token)
   }
 }
+
+
+
+  
