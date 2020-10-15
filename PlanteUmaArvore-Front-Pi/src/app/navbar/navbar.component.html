@@ -15,9 +15,10 @@
         <a class="btn mr-5 btn-sombra " routerLink='/home'> Home </a>
         <a class="btn mr-5 btn-sombra " routerLink='/sobre'> Sobre Nós </a>
         <a class="btn mr-5 btn-sombra " routerLink='/feed'> Feed </a>
-        <a class="btn mr-5 btn-sombra " routerLink='/login'> Login </a>
-        <a class="btn mr-5 btn-sombra " routerLink='/cadastro'> Cadastro </a>
-        <a class="btn mr-5 btn-sombra " routerLink='/contato'> Contato </a>        
+        <a class="btn mr-5 btn-sombra " routerLink='/login' *ngIf='auth.btnLogin()'> Login </a>
+        <a class="btn mr-5 btn-sombra " routerLink='/cadastro' *ngIf='auth.btnLogin()'> Cadastro </a>
+        <a class="btn mr-5 btn-sombra " routerLink='/contato'> Contato </a>
+        <a class="btn mr-5 btn-sombra " (click)='sair()' *ngIf='auth.btnSair()'>Sair</a>    
    
     </div>
   </div>
