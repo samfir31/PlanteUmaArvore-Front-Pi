@@ -60,7 +60,7 @@ export class FeedComponent implements OnInit {
   }
 
   publicar() {
-    console.log(this.idTema)
+    
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
     
