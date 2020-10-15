@@ -22,10 +22,10 @@
         <div class="col-md-8">
           <div class="form-group m-0">
             <label class="text-monospace" for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um
+                novo</a></label>
             <select name="tema" id='tema' class="form-control"[(ngModel)]='idTema' (change)='findByIdTema()'>
-
               <option *ngFor='let item of listaTemas' value={{item.id}}>
-                {{item.tema}}
+                {{item.nome}}
               </option>
             </select>
           </div>
@@ -84,10 +84,8 @@
                   <div class="row d-flex align-items-center">
                     <div class="col-md-8">
                       <h5 class="card-title"> Privado: {{item.privacidade}} </h5>
-
-                      <small>Tema: {{item.tema.nome}} </small>                      
-
-
+                      <small>Tema:</small>
+                      
                     </div>
                     <div class="col-md-4 d-flex justify-content-end">
 
@@ -139,10 +137,6 @@
                       <div class="col-md-12">
                         <h5 class="card-title"> {{post.privacidade}}  </h5>
                         
-      
-                        
-                        
-                        
                       </div>
                     </div>
                   </div>
@@ -152,6 +146,7 @@
                     <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
                       Postado em {{post.data | date: 'dd/MM/yyyy'}} às {{post.data | date:'HH:mm'}}</small>
                   </div>
+
                 </div>
               </div>
             </div>
