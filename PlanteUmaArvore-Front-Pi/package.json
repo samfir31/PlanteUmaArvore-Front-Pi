@@ -24,6 +24,8 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-regular-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@types/gapi": "0.0.39",
+    "@types/gapi.auth2": "0.0.52",
     "bootstrap": "^4.5.2",
     "jquery": "^3.5.1",
     "ngx-order-pipe": "^2.1.0",
