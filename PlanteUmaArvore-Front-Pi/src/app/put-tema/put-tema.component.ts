@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Tema } from '../model/Tema';
+import { AlertasService } from '../service/alertas.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -15,7 +16,9 @@ export class PutTemaComponent implements OnInit {
   constructor(
     private  temaService: TemaService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alert: AlertasService
+
 
 
   ) { }
@@ -39,7 +42,7 @@ export class PutTemaComponent implements OnInit {
 
         this.tema = resp
         this.router.navigate(['/cadastro-tema'])
-        alert('Tema Atualizado com sucesso')
+        this.alert.showAlertSuccess('Tema Atualizado com sucesso')
     })
 
 

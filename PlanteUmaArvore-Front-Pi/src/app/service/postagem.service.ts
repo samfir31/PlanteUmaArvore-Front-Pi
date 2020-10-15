@@ -12,7 +12,7 @@ export class PostagemService {
   constructor(private http: HttpClient) { }
 
   token = {
-    headers: new HttpHeaders().set('Authorization', localStorage.getItem('token'))
+    headers: new HttpHeaders().set('Authorization', environment.token  )
   }
 
   getAllPostagens() {
@@ -27,6 +27,7 @@ export class PostagemService {
     return this.http.get(`http://localhost:8080/postagens/privacidade/${privacidade}`, this.token)
   }
 
+ 
   postPostagem(postagem: Postagem){
     return this.http.post('http://localhost:8080/postagens', postagem, this.token)
   }
@@ -46,3 +47,7 @@ export class PostagemService {
     return this.http.delete(`http://localhost:8080/postagens/${id}`, this.token)
   }
 }
+
+
+
+  

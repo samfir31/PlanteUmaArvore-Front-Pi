@@ -5,6 +5,8 @@ import { PostagemService } from './../service/postagem.service';
 import { Postagem } from './../model/Postagem';
 import { Component, OnInit } from '@angular/core';
 import { Tema } from '../model/Tema';
+import { environment } from 'src/environments/environment.prod';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-feed',
@@ -18,26 +20,34 @@ export class FeedComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
-  privacidade: string
+  privacidade: boolean
+
+  
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
   idTema: number
+  nomeTema: string
+  
+
+
+  
 
 
   constructor(
     private postagemService: PostagemService,
     private temaService: TemaService,
-    private router: Router
+    private router: Router,
+    private alert: AlertasService,
   ) { }
 
   ngOnInit() {
 
-    let token = localStorage.token
+    let token = environment.token
 
     if (token == '') {
       this.router.navigate(['/login'])
-      alert('Faça o login antes de entrar no feed...')
+      this.alert.showAlertInfo('Faça o login antes de entrar no feed...')
     }
 
     window.scroll(0, 0)
@@ -53,16 +63,17 @@ export class FeedComponent implements OnInit {
   }
 
   publicar() {
+    
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
-
+    
     if (this.postagem.descricao == null || this.postagem.tema == null) {
-      alert('Preencha todos os campos antes de publicar!')
+      this.alert.showAlertInfo('Preencha todos os campos antes de publicar!')
     } else {
       this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
         this.postagem = resp
         this.postagem = new Postagem()
-        alert('Postagem realizada com sucesso!')
+        this.alert.showAlertSuccess('Postagem realizada com sucesso!')
         this.findAllPostagens()
       })
     }
@@ -81,13 +92,15 @@ export class FeedComponent implements OnInit {
     })
   }
 
-  findByPrivacidadePostagem() {
-    if (this.privacidade === '') {
-      this.findAllPostagens()
+
+
+ /* findByPrivacidadePostagem() {
+    if (this.privacidade === true || this.privacidade === false  ) {
+      this.findByPrivacidadePostagem()
     } else {
       this.postagemService.getByPrivacidadePostagem(this.postagem.privacidade).subscribe((resp: Postagem[]) => {
         this.listaPostagens = resp
       })
     }
-  }
+  }*/
 }
