@@ -6,6 +6,7 @@ import { ViewChild,ElementRef } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { AlertasService } from '../service/alertas.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

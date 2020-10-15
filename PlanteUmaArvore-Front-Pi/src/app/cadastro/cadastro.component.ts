@@ -5,6 +5,7 @@ import { AuthService } from '../service/auth.service';
 import { ViewChild,ElementRef } from '@angular/core'
 import { AlertasService } from '../service/alertas.service';
 
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
