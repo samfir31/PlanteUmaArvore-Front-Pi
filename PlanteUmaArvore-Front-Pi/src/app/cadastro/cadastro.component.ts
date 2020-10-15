@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 import { ViewChild,ElementRef } from '@angular/core'
+import { AlertasService } from '../service/alertas.service';
+
 
 @Component({
   selector: 'app-cadastro',
@@ -17,7 +19,8 @@ export class CadastroComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alert: AlertasService
 
   ) { }
 
@@ -35,14 +38,14 @@ cadastrar(){
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario)=>{
         this.usuario = resp
         this.router.navigate(['/login'])
-        alert('usuario cadastrado com sucesso')
+        this.alert.showAlertSuccess('usuario cadastrado com sucesso')
         this.router.navigate(['/login'])
         
       })
 
     } else{
 
-      alert('Suas senhas não conferem')
+      this.alert.showAlertInfo('Suas senhas não conferem')
 
 
     }    
@@ -83,7 +86,7 @@ cadastrar(){
        this.cadastrar();
         
       }, (error) => {
-        alert(JSON.stringify(error, undefined, 2));
+        this.alert.showAlertSuccess(JSON.stringify(error, undefined, 2));
       });
   }
 
