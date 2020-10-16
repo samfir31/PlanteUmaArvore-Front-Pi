@@ -99,7 +99,7 @@
                 </div>
 
                 <div class="card-body">
-                  <iframe src="{{item.midia}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <img src="{{item.midia}}" class="img-fluid" alt="Responsive image">
                    <p class="card-text" aria-describedby="texto"> {{post.descricao}} </p>
                     <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
                     Postado em {{post.data | date: 'dd/MM/yyyy'}} às {{post.data | date:'HH:mm'}}</small>
