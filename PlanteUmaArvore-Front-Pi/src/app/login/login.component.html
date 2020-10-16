@@ -1,43 +1,53 @@
 <div class="container login-container">
     <div class="row">
+
+        <!-- Imagem -->
         <div class="col-md-8">
             <figure class="figure pt-4 mr-2 ml-2">
-            <img src="https://i.imgur.com/yJLGHZZ.jpg" class="figure-img img-fluid rounded" alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure.">
+            <img src="https://i.imgur.com/Guviksg.png" class="figure-img img-fluid rounded imagem-maoerveng" alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure.">
           </figure>
-        
         </div>
 
         <div class="col-md-4 login-form-1">
-            <h3>Login </h3>
+            <h3 class="mb-4">Login </h3>
+            <!-- Início FORM -->
             <div class="form">
+                <!-- Campo email-->
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Digite seu usuario *" value="" [(ngModel)]='userLogin.email'/>
+                    <input type="text" class="form-control" placeholder="Digite seu usuario" value="" [(ngModel)]='userLogin.email'/>
                 </div>
+
+                <!-- Campo Senha-->
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Digite sua senha *" value="" [(ngModel)]='userLogin.senha'/>
+                    <input type="password" class="form-control" placeholder="Digite sua senha" value="" [(ngModel)]='userLogin.senha'/>
                 </div>
-                <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-outline-success w-30" (click)='entrar()'>Entrar </button>
-                  </div>
-                  <div class="d-flex justify-content-center mt-2">
-                    <button type="submit" class="btn btn-outline-success w-30" #loginRef>                      Logar com o Google<img class="social-btn-icon" alt="Logar com o Google" src="https://hrcdn.net/fcore/assets/google-colored-20b8216731.svg">
+
+                <!--BTN Entrar-->
+                <div class="d-flex justify-content-center mb-3">
+                    <button type="submit" class="btn  w-30 login-Btn" (click)='entrar()'>Entrar </button>
+                </div>
+
+                <!--LOGIN com Google -->
+                <div class="d-flex justify-content-center mt-2 mb-4">
+                    <button type="submit" class="btn w-30 login-Btn" #loginRef> Logar com o Google<img class="social-btn-icon" alt="Logar com o Google" src="https://hrcdn.net/fcore/assets/google-colored-20b8216731.svg">
                     </button>
                 </div>
-                <div class="d-flex justify-content-center">
-                    <a href="#" class="ForgetPwd">Recuperar senha?</a>
-                </div>
-                
-                
+
+                <!-- Recuperação Senha -->
+                <div class="d-flex justify-content-center w-49 h-40 ">
+                    <a href="#" class="ForgetPwd" >Recuperar senha</a>
+                </div>                
             </div>   
         </div>
-        </div>
+    </div>
+
         <div class="container2 p-5">
             <div class="row">
                 <div class="col-12">
-            <figcaption class="figure-caption">Venha fazer parte da nossa luta! Vamos juntos lutar, avançar para  os próximos passos da luta em defesa do nosso futuro, plantar uma arvore é cuidar do amanha! </figcaption>
-            <hr>
+                    <hr>
+                    <figcaption class="figure-caption ">Venha fazer parte da nossa luta! Vamos juntos lutar, avançar para  os próximos passos da luta em defesa do nosso futuro, plantar uma arvore é cuidar do amanha! 
+                    </figcaption>
                 </div>
-                    
             </div>    
         </div>
 </div>
