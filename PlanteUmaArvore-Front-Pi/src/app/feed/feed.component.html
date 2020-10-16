@@ -28,15 +28,7 @@
                 </select>
               </div>
             </div>        
-            <div class="col-md-3 mt-4">
-              <div class="form-group m-0">  
-                <label class="text-monospace">Privacidade</label>       
-                <select name="privacidade" id='privacidade' class="form-control">
-                  <option value="1" >Publico</option>
-                  <option value="0" >Privado</option>              
-                </select>
-              </div>
-            </div>
+         
             <div class="col-md-5 mt-4"> 
               <div class="form-group">
                 <label for="tema">Link da midia</label>
@@ -69,22 +61,26 @@
           aria-labelledby="nav-postagens-tab">
           <div class="row mt-3 mb-3">
             <div class="col-md-10 pr-0">
-              <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" aria-label="Pesquisar" >
+              <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" aria-label="Pesquisar" [(ngModel)]='nomeTema' >
             </div>
             <div class="col-md-2 pl-0">
-              <button class="btn btn-outline-warning w-100" type="button" >Pesquisar</button>
+              <button class="btn btn-outline-warning w-100" type="button"  (click)='findByNomeTema()' >Pesquisar Tema</button>
             </div>
           </div>
 
           <div class="row">
             <div class="col-md-12">
 
-              <div class="card mt-5 mb-5" *ngFor="let item of listaPostagens" value={{item.id}}>
+              <div class="card mt-5 mb-5" *ngFor="let item of listaTemas">
+
+                <span class="border" >Tema: {{item.nome}}</span>
+                <div *ngFor='let post of item.postagem'>
+
                 <div class="card-header">
                   <div class="row d-flex align-items-center">
                     <div class="col-md-8">
-                      <h5 class="card-title"> Privado: {{item.privacidade}} </h5>
-                      <small>Tema: {{item.tema.nome}}</small>
+                      <h5 class="card-title"></h5>
+                     
                       
                     </div>
                     <div class="col-md-4 d-flex justify-content-end">
@@ -104,10 +100,12 @@
 
                 <div class="card-body">
                   <iframe src="{{item.midia}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                   <p class="card-text" aria-describedby="texto"> {{item.descricao}} </p>
+                   <p class="card-text" aria-describedby="texto"> {{post.descricao}} </p>
                     <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
-                    Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
+                    Postado em {{post.data | date: 'dd/MM/yyyy'}} às {{post.data | date:'HH:mm'}}</small>
                 </div>
+
+                </div><!-- for post-->
               </div>
             </div>
           </div>

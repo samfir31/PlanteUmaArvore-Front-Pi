@@ -93,14 +93,20 @@ export class FeedComponent implements OnInit {
   }
 
 
-
- /* findByPrivacidadePostagem() {
-    if (this.privacidade === true || this.privacidade === false  ) {
-      this.findByPrivacidadePostagem()
-    } else {
-      this.postagemService.getByPrivacidadePostagem(this.postagem.privacidade).subscribe((resp: Postagem[]) => {
-        this.listaPostagens = resp
+  findByNomeTema(){
+  
+    if(this.nomeTema === ''){
+      this.findAllTemas()
+      console.log('estou aqui no if')
+    }else{
+      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: Tema[]) => {
+        
+        this.listaTemas = resp
+        console.log(this.listaTemas)
       })
+  
     }
-  }*/
+  
+  }
+
 }
