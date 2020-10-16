@@ -23,6 +23,7 @@ import { PutPostagemComponent } from './put-postagem/put-postagem.component';
 import { PutTemaComponent } from './put-tema/put-tema.component';
 import { DeleteTemaComponent } from './delete-tema/delete-tema.component';
 import { DeletePostagemComponent } from './delete-postagem/delete-postagem.component';
+import { ParceirosComponent } from './parceiros/parceiros.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { DeletePostagemComponent } from './delete-postagem/delete-postagem.compo
     PutTemaComponent,
     DeleteTemaComponent,
     DeletePostagemComponent,
+    ParceirosComponent,
 
   ],
   imports: [

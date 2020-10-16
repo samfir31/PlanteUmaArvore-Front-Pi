@@ -6,7 +6,7 @@ export class Postagem{
     public data: Date
     public privacidade: boolean
     public descricao: string
-    public midia: Blob
+    public midia: string
     public tema: Tema
 
 

@@ -2,52 +2,54 @@
 
   <div class="row">
 
-    <div class="col-md-4">
+    <div class="col-md-3">
       <app-perfil> </app-perfil>
     </div>
 
-    <div class="col-md-8">
+    <div class="col-md-7">
 
-      <h3 class="text-center mb-4 text-monospace" >No que você esta pensando? </h3>
+      <h3 class="text-center mb-4 text-monospace" >Começar uma publicação </h3>
 
-      <div class="form-group">
-        <label class="text-monospace" for="texto">Texto:</label>
-        <textarea class="form-control" id="texto" rows="3" placeholder="Digite aqui o seu texto"
+      <div class="field">        
+        <textarea class="form-control textarea is-primary" id="texto" rows="3" placeholder="Digite aqui o seu texto"
           [(ngModel)]='postagem.descricao'></textarea>
       </div>
 
-      <div class="row d-flex align-items-end">
-
         <div>
-        <div class="col-md-8">
-          <div class="form-group m-0">
-            <label class="text-monospace" for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um
-                novo</a></label>
-            <select name="tema" id='tema' class="form-control"[(ngModel)]='idTema' (change)='findByIdTema()'>
-              <option *ngFor='let item of listaTemas' value={{item.id}}>
-                {{item.nome}}
-              </option>
-            </select>
-          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group m-0">
+                <label class="text-monospace text-center" for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um
+                    novo</a></label>
+                <select name="tema" id='tema' class="form-control"[(ngModel)]='idTema' (change)='findByIdTema()'>
+                  <option *ngFor='let item of listaTemas' value={{item.id}}>
+                    {{item.nome}}
+                  </option>
+                </select>
+              </div>
+            </div>        
+            <div class="col-md-3 mt-4">
+              <div class="form-group m-0">  
+                <label class="text-monospace">Privacidade</label>       
+                <select name="privacidade" id='privacidade' class="form-control">
+                  <option value="1" >Publico</option>
+                  <option value="0" >Privado</option>              
+                </select>
+              </div>
+            </div>
+            <div class="col-md-5 mt-4"> 
+              <div class="form-group">
+                <label for="tema">Link da midia</label>
+                <input type="texto" class="form-control" [(ngModel)]='postagem.midia'>
+              </div>
+            </div>
+          </div>      
+    </div>
+        <div class="col-md-8 d-flex justify-content-end">
+          <button type="button" class="btn btn-outline-info w-50" (click)='publicar()'>Publicar</button>
         </div>
 
-
-        
-
-        <form>
-          <div class="form-group">
-            <label for="exampleFormControlFile1">Video</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1" [(ngModel)]='postagem.midia'>
-          </div>
-        </form>
-
-      </div>
-
-        <div class="col-md-6 d-flex justify-content-end">
-          <button type="button" class="btn btn-outline-info w-25" (click)='publicar()'>Publicar</button>
-        </div>
-
-      </div>
+      
 
       <hr class="mt-5 mb-5">
 
@@ -101,7 +103,7 @@
                 </div>
 
                 <div class="card-body">
-                    
+                  <iframe src="{{item.midia}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                    <p class="card-text" aria-describedby="texto"> {{item.descricao}} </p>
                     <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
                     Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
@@ -153,6 +155,9 @@
         </div>
       </div>
 
+    </div>
+    <div class="col-md-2">
+      <app-parceiros> </app-parceiros>
     </div>
   </div>
 </div>
