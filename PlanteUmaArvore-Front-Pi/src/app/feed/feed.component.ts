@@ -21,6 +21,8 @@ export class FeedComponent implements OnInit {
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
   privacidade: boolean
+  descricao: string
+  
 
   
 
@@ -28,6 +30,7 @@ export class FeedComponent implements OnInit {
   listaTemas: Tema[]
   idTema: number
   nomeTema: string
+  
   
 
 
@@ -107,6 +110,18 @@ export class FeedComponent implements OnInit {
   
     }
   
+  }
+  findByDescricaoPostagem(){
+    if(this.descricao === ''){
+      this.findAllPostagens()
+      console.log("estou aqui")
+    }else{
+      this.postagemService.getByDescricaoPostagem(this.descricao).subscribe((resp: Postagem[]) =>{
+        this.listaPostagens = resp
+        console.log(" depois do else")
+      })
+    }
+
   }
 
 }
