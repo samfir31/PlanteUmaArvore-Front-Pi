@@ -46,6 +46,12 @@ export class PostagemService {
   deletePostagem(id: number) {
     return this.http.delete(`http://localhost:8080/postagens/${id}`, this.token)
   }
+
+  getByDescricaoPostagem(descricao: string){
+
+    return this.http.get(`http://localhost:8080/postagens/titulo/${descricao}`, this.token)
+  }
+
 }
 
 
