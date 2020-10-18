@@ -66,11 +66,10 @@
     width: auto;
 }
 
-.config-imagem {
-    width: 600px;
-    height: 600px;
-    margin-left: 10%;
-    border-radius: 100%;
-    background-attachment: fixed;
+.config-imagem {    
     background-image: linear-gradient(180deg, #938ba1, #3a5683, #51cb20 );
+}
+
+.container-fluid{
+    padding: 0%;
 }
