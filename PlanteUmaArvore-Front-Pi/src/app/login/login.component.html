@@ -14,12 +14,12 @@
             <div class="form">
                 <!-- Campo email-->
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Digite seu usuario" value="" [(ngModel)]='userLogin.email'/>
+                    <input id="email" type="text" class="form-control" placeholder="Digite seu usuario" value="" [(ngModel)]='userLogin.email'/>
                 </div>
 
                 <!-- Campo Senha-->
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Digite sua senha" value="" [(ngModel)]='userLogin.senha'/>
+                    <input id = "senha"type="password" class="form-control" placeholder="Digite sua senha" value="" [(ngModel)]='userLogin.senha'/>
                 </div>
 
                 <!--BTN Entrar-->
@@ -29,9 +29,9 @@
 
                 <!--LOGIN com Google -->
                 <div class="d-flex justify-content-center mt-2 mb-4">
-                    <button type="submit" class="btn w-30 login-Btn" #loginRef> Logar com o Google<img class="social-btn-icon" alt="Logar com o Google" src="https://hrcdn.net/fcore/assets/google-colored-20b8216731.svg">
+                    <button type="submit" class="btn w-30 login-Btn" #loginRe> Logar com o Google<img class="social-btn-icon" alt="Logar com o Google" src="https://hrcdn.net/fcore/assets/google-colored-20b8216731.svg">
                     </button>
-                </div>
+                </div>                
 
                 <!-- Recuperação Senha -->
                 <div class="d-flex justify-content-center w-49 h-40 ">
