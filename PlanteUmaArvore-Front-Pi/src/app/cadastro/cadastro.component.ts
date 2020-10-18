@@ -38,7 +38,8 @@ cadastrar(){
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario)=>{
         this.usuario = resp        
         this.alert.showAlertSuccess('usuario cadastrado com sucesso')
-        this.router.navigate(['/login'])
+        this.googleInitialize();   
+        this.router.navigate(['/login']) 
         
       })
 
@@ -68,8 +69,7 @@ cadastrar(){
       js = d.createElement(s); js.id = id;
       js.src = "https://apis.google.com/js/platform.js?onload=googleSDKLoaded";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'google-jssdk'));
-    this.prepareLogin()
+    }(document, 'script', 'google-jssdk'));    
   }
 /*Inicialização do Login google*/
 
@@ -82,9 +82,9 @@ cadastrar(){
        this.usuario.email = (profile.getEmail())
        this.usuario.nome = (profile.getName())
        this.senha = googleUser.getAuthResponse().id_token
-       this.usuario.senha = googleUser.getAuthResponse().id_token
-       this.cadastrar();
-        
+       this.usuario.senha = googleUser.getAuthResponse().id_token  
+       this.usuario.foto = profile.getImageUrl()     
+       this.cadastrar();        
       }, (error) => {
         this.alert.showAlertSuccess(JSON.stringify(error, undefined, 2));
       });

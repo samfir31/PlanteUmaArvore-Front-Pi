@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   
    { }
 
-  ngOnInit(): void {
+  ngOnInit() {        
     this.iniciaGoogle();
   }
 
@@ -36,11 +36,10 @@ export class LoginComponent implements OnInit {
     window['googleSDKLoaded'] = () => {
       window['gapi'].load('auth2', () => {
         this.auth2 = window['gapi'].auth2.init({
-          client_id: '405739907128-3p04j2bendhvkpmrjecserh2o4pineua.apps.googleusercontent.com',
-          cookie_policy: 'single_host_origin',
+          client_id: '405739907128-3p04j2bendhvkpmrjecserh2o4pineua.apps.googleusercontent.com',          
           scope: 'profile email'
         });
-        this.prepareLogin();
+        this.prepareLogin();        
       });
     }
     (function(d, s, id){

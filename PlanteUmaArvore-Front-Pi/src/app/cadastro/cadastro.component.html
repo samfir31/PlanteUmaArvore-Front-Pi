@@ -24,6 +24,10 @@
           <input type="password" class="form-control" id="senhaConf" placeholder="Confirmação de senha" [(ngModel)]='usuario.senha'>
         </div>
 
+        <div class="form-group">          
+          <input type="password" class="form-control" id="senhaConf" placeholder="Link imagem" [(ngModel)]='usuario.foto'>
+        </div>
+
         <div class="d-flex justify-content-center mb-3 mt-4">
           <button class="btn w-30 login-Btn" (click)='cadastrar()'>Cadastrar</button>
         </div>
