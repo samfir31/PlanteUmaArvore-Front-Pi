@@ -1,56 +1,59 @@
-<div class="container w-100">
+<div class="container-fluid w-100 cor-fundo ">
 
-  <div class="row">
+  <div class="row ">
 
     <div class="col-md-3">
       <app-perfil> </app-perfil>
     </div>
 
-    <div class="col-md-7">
-
-      <h3 class="text-center mb-4 text-monospace" >Começar uma publicação </h3>
-
-      <div class="field">        
-        <textarea class="form-control textarea is-primary" id="texto" rows="3" placeholder="Digite aqui o seu texto"
-          [(ngModel)]='postagem.descricao'></textarea>
-      </div>
-
-        <div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="form-group m-0">
-                <label class="text-monospace text-center" for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um
-                    novo</a></label>
-                <select name="tema" id='tema' class="form-control"[(ngModel)]='idTema' (change)='findByIdTema()'>
-                  <option *ngFor='let item of listaTemas' value={{item.id}}>
-                    {{item.nome}}
-                  </option>
-                </select>
-              </div>
-            </div>        
-         
-            <div class="col-md-5 mt-4"> 
-              <div class="form-group">
-                <label for="tema">Link da midia</label>
-                <input type="texto" class="form-control" [(ngModel)]='postagem.midia'>
-              </div>
-            </div>
-          </div>      
-    </div>
-        <div class="col-md-8 d-flex justify-content-end">
-          <button type="button" class="btn btn-outline-info w-50" (click)='publicar()'>Publicar</button>
-        </div>
-
+  <div class="col-md-7 ">
+    <div class="container-fluid cor-fundo border border-dark rounded mt-3 login-form-1" style="background-color: #ffffff;">
       
+    <h3 class="text-center mb-4 text-monospace p-2" >Começar uma publicação </h3>
 
-      <hr class="mt-5 mb-5">
+    <div class="field">        
+      <textarea class="form-control textarea is-primary border-dark rounded login-form-1" id="texto" rows="3" placeholder="Digite aqui o seu texto"
+        [(ngModel)]='postagem.descricao'></textarea>
+    </div>
+
+      <div>
+        <div class="row ">
+          <div class="col-md-6">
+            <div class="form-group m-0">
+              <label class="text-monospace text-center mt-3" for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um
+                  novo</a></label>
+              <select name="tema" id='tema' class="form-control border-dark rounded login-form-1"[(ngModel)]='idTema' (change)='findByIdTema()'>
+                <option *ngFor='let item of listaTemas' value={{item.id}}>
+                  {{item.nome}}
+                </option>
+              </select>
+            </div>
+          </div>        
+       
+          <div class="col-md-6 mt-4"> 
+            <div class="form-group ">
+              <label for="tema">Link da midia</label>
+              <input type="texto" class="form-control border-dark rounded login-form-1" [(ngModel)]='postagem.midia'>
+            </div>
+          </div>
+        </div>      
+      </div>
+      <div class="col-md-8 d-flex justify-content-end p-2">
+        <button type="button" class="btn btn-outline-success w-50" (click)='publicar()'>Publicar</button>
+      </div>
+      
+</div>
+    
+
+<hr class="mt-5 mb-5 border border-success rounded mt-3 login-form-1">
+ 
 
       <nav class="d-flex justify-content-center">
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab"
+          <a class="nav-item nav-link active text-secondary font-weight-bold border-success rounded mt-3 login-form-1 m-2" id="nav-home-tab" data-toggle="tab"
             href="#minhas-postagens" role="tab" aria-controls="nav-home" aria-selected="true">Minhas Postagens</a>
 
-          <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab"
+          <a class="nav-item nav-link text-secondary font-weight-bold border-success rounded mt-3 login-form-1 m-2" id="nav-profile-tab" data-toggle="tab"
             href="#postagens-temas" role="tab" aria-controls="nav-profile" aria-selected="false">Postagens por tema</a>
         </div>
       </nav>
@@ -61,21 +64,21 @@
           aria-labelledby="nav-postagens-tab">
           <div class="row mt-3 mb-3">
             <div class="col-md-10 pr-0">
-              <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" aria-label="Pesquisar" [(ngModel)]='descricao' >
+              <input class="form-control w-100 border-success rounded mt-3 login-form-1" type="search" placeholder="Pesquisar postagem" aria-label="Pesquisar" [(ngModel)]='descricao' >
             </div>
             <div class="col-md-2 pl-0">
-              <button class="btn btn-outline-warning w-100" type="button"  (click)='findByDescricaoPostagem()' >Pesquisar Postagens</button>
+              <button class="btn btn-outline-success w-100 border-success rounded mt-3 login-form-1" type="button"  (click)='findByDescricaoPostagem()' >Pesquisar</button>
             </div>
           </div>
 
           <div class="row">
             <div class="col-md-12">
 
-              <div class="card mt-5 mb-5"  *ngFor="let item of listaPostagens | orderBy : key : reverse">
+              <div class="card mt-5 mb-5 border-success rounded mt-3 login-form-1"  *ngFor="let item of listaPostagens | orderBy : key : reverse">
                 <div class="card-header">
                     <div class="row d-flex align-items-center">
                         <div class="col-md-8">                            
-                            <small>Tema: {{item.tema.nome}} </small>
+                          <h4 class="text-monospace">Tema: {{item.tema.nome}} </h4>
                         </div>
                         <div class="col-md-4 d-flex justify-content-end">
 
@@ -109,7 +112,7 @@
 
           <div class="row mt-3 mb-3">
             <div class="col-md-10 pr-0">
-              <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" aria-label="Pesquisar" [(ngModel)]='nomeTema'>
+              <input class="form-control w-100 border-success rounded mt-3 login-form-1" type="search" placeholder="Pesquisar Tema" aria-label="Pesquisar" [(ngModel)]='nomeTema'>
             </div>
             <div class="col-md-2 pl-0">
               <button class="btn btn-outline-warning w-100" type="button" (click)='findByNomeTema()'>Pesquisar</button>
@@ -121,7 +124,7 @@
               
               <div *ngFor='let post of item.postagem'>
                 
-                <div class="card mt-5 mb-5" >
+                <div class="card mt-5 mb-5 border-success rounded mt-3 login-form-1" >
                   <div class="card-header">
                     <div class="row d-flex align-items-center">
                         <div class="col-md-12">

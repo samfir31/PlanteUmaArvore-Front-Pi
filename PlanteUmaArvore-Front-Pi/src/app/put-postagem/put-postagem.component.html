@@ -12,7 +12,7 @@
   
         <div class="form-group">
           <label class="text-monospace" for="texto">Texto:</label>
-          <textarea class="form-control" id="texto" rows="3" placeholder="Digite aqui o seu texto"
+          <textarea class="form-control border-success rounded login-form-1" id="texto" rows="3" placeholder="Digite aqui o seu texto"
             [(ngModel)]='postagem.descricao'></textarea>
         </div>
   
@@ -23,26 +23,13 @@
             <div class="form-group m-0">
               <label class="text-monospace" for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um
                   novo</a></label>
-              <select name="tema" id='tema' class="form-control" [(ngModel)]='tema.id' (change)='findByIdTema()'>
+              <select name="tema" id='tema' class="form-control border-success rounded login-form-1" [(ngModel)]='tema.id' (change)='findByIdTema()'>
                 <option *ngFor='let item of listaTemas' value={{item.id}}>
                   {{item.nome}}
                 </option>
               </select>
             </div>
           </div>
-  
-  
-          <div class="col-md-6">
-            <div class=" form-inline">
-              <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Privacidade</label>
-              <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                <option selected >Escolher...</option>
-                <option value="1">Publico</option>
-                <option value="0">Privado</option>
-              </select>
-            </div>
-          </div>
-  
         </div>
   
           <div class="col-md-6 d-flex justify-content-end">
