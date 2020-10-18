@@ -22,17 +22,15 @@ function animeScroll1(){
   const windowstop = window.pageYOffset;
   
     document.querySelectorAll('[data-anime1]').forEach(function(elemento){ 
-      if(windowstop>300){      
+      if(windowstop>1200){      
       elemento.classList.add('animacao');
+      console.log(windowstop)
     }
     
   
   else{        
       elemento.classList.remove('animacao');
-    }
-    if(windowstop>850){      
-      elemento.classList.remove('animacao');
-    } 
+    }    
   })
 }    
   
@@ -47,16 +45,13 @@ animeScroll1();
 function animeScroll2(){  
       const windowstop = window.pageYOffset;          
       
-        document.querySelectorAll('[data-anime]').forEach(function(elemento){  
-          if(windowstop>900){      
+        document.querySelectorAll('[data-anime2]').forEach(function(elemento){  
+          if(windowstop>1600){      
           elemento.classList.add('animacao');
         }
           else{        
           elemento.classList.remove('animacao');
-        } 
-        if(windowstop>1300){      
-          elemento.classList.remove('animacao');
-        }
+        }         
       })
       
 
