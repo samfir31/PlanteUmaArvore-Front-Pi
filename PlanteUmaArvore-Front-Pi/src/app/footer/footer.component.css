@@ -1,5 +1,7 @@
 /* footer social icons */
-
+.grad {
+  background-image: linear-gradient(180deg, #aeffd8, #b0c6ce /*#ac8887*/);
+}
 ul.social-network {
     list-style: none;
     display: inline;
@@ -14,7 +16,7 @@ ul.social-network {
   }
 
   .faFacebook, .faLinkedin, .faInstagram{
-      color: white;
+      color: black;
   }
 
   .faFacebook:hover{
@@ -29,5 +31,5 @@ ul.social-network {
   color: #C13584;
   }
   .footer-cor{
-    background-color: #07889b;
+    background-color: #aeffd8;
 }
