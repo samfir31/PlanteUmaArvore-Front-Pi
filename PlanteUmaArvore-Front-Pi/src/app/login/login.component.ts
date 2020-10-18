@@ -13,7 +13,7 @@ import { AlertasService } from '../service/alertas.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  @ViewChild('loginRef', {static: true }) loginElement: ElementRef;
+  @ViewChild('loginRe', {static: true }) loginElement: ElementRef;
   auth2: any
 
     userLogin: UserLogin = new UserLogin()
@@ -28,11 +28,11 @@ export class LoginComponent implements OnInit {
   
    { }
 
-  ngOnInit() {
-    this.googleInitialize();
+  ngOnInit(): void {
+    this.iniciaGoogle();
   }
 
-  googleInitialize() {
+  iniciaGoogle() {
     window['googleSDKLoaded'] = () => {
       window['gapi'].load('auth2', () => {
         this.auth2 = window['gapi'].auth2.init({
@@ -57,8 +57,9 @@ export class LoginComponent implements OnInit {
       (googleUser) => {
         let profile = googleUser.getBasicProfile();   
         this.userLogin.email = (profile.getEmail())
-        this.userLogin.senha = googleUser.getAuthResponse().id_token
-        this.entrar();
+        this.userLogin.senha = googleUser.getAuthResponse().id_token;
+        (<HTMLInputElement>document.getElementById("email")).value = profile.getEmail();
+        (<HTMLInputElement>document.getElementById("senha")).value = googleUser.getAuthResponse().id_token;
       }, (error) => {
         this.alert.showAlertInfo(JSON.stringify(error, undefined, 2));
       });
@@ -70,7 +71,6 @@ export class LoginComponent implements OnInit {
       this.userLogin = resp
       environment.token = this.userLogin.token
       this.router.navigate(['/feed'])
-
     })
 
 

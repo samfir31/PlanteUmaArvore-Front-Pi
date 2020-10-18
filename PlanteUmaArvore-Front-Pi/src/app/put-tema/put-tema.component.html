@@ -9,20 +9,20 @@
             <div>
                 <div class="form-group">
                   <label for="tema">Nome do tema:</label>
-                  <input type="texto" class="form-control" id="texto" placeholder="Digite aqui o seu tema" [(ngModel)]="tema.nome">
+                  <input type="texto" class="form-control border-success rounded login-form-1" id="texto" placeholder="Digite aqui o seu tema" [(ngModel)]="tema.nome">
                 </div>
 
 
                 <div>
                     <div class="form-group">
                       <label for="textotipo">Tipo do Tema:</label>
-                      <input type="text" class="form-control" id="textotipo" placeholder="Digite aqui o seu titulo" [(ngModel)]="tema.tipo">
+                      <input type="text" class="form-control border-success rounded login-form-1" id="textotipo" placeholder="Digite aqui o seu titulo" [(ngModel)]="tema.tipo">
                  </div>
 
 
                  <form class="form-inline">
                     <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Privacidade</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    <select class="custom-select my-1 mr-sm-2 border-success rounded login-form-1" id="inlineFormCustomSelectPref">
                       <option selected [(ngModel)]='tema.disponibilidade'>Escolher...</option>
                       <option value="1">Disponivel</option>
                       <option value="0">Indisponivel</option>

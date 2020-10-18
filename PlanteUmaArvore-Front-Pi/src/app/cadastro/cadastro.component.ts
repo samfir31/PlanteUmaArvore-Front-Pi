@@ -36,8 +36,7 @@ export class CadastroComponent implements OnInit {
 cadastrar(){
     if (this.senha === this.usuario.senha){
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario)=>{
-        this.usuario = resp
-        this.router.navigate(['/login'])
+        this.usuario = resp        
         this.alert.showAlertSuccess('usuario cadastrado com sucesso')
         this.router.navigate(['/login'])
         
@@ -70,6 +69,7 @@ cadastrar(){
       js.src = "https://apis.google.com/js/platform.js?onload=googleSDKLoaded";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'google-jssdk'));
+    this.prepareLogin()
   }
 /*Inicialização do Login google*/
 
