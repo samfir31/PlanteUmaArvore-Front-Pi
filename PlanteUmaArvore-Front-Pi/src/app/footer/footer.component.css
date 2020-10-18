@@ -1,7 +1,5 @@
 /* footer social icons */
-.grad {
-  background-image: linear-gradient(180deg, #aeffd8, #b0c6ce /*#ac8887*/);
-}
+
 ul.social-network {
     list-style: none;
     display: inline;
@@ -32,4 +30,7 @@ ul.social-network {
   }
   .footer-cor{
     background-color: #aeffd8;
+    border-style: ridge;
+    border: 1px solid;   
 }
+
