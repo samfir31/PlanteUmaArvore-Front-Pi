@@ -16,11 +16,13 @@
   height: 90vh;
 }
 
-.carousel-caption.d-md-block {
-  display: block !important;
-}
+
 .carousel-caption.ll1{  
     top: 0 !important;
     bottom: auto !important;
 
+}
+
+.cor{
+  background-color: #f3f3f3;
 }
