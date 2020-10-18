@@ -11,7 +11,8 @@
 
 .texto {
 text-align: justify;
-font-style: italic;
+font-family: 'Trebuchet MS, sans-serif';
+font-size: 24px;
 }
 
 .grad {
@@ -49,7 +50,8 @@ width: 40%;
 
 .configimgfrases {
   width: auto;
-  height: 150px;
-  margin-left: 40%;
+  height: 140px;
+  margin-left: 20%;
+  margin-bottom: 10%;
   
 }
