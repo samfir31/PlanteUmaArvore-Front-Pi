@@ -23,6 +23,7 @@ export class FeedComponent implements OnInit {
   privacidade: boolean
   descricao: string
   
+  
 
   
 
@@ -30,6 +31,8 @@ export class FeedComponent implements OnInit {
   listaTemas: Tema[]
   idTema: number
   nomeTema: string
+  
+
   
   
 
@@ -100,12 +103,13 @@ export class FeedComponent implements OnInit {
   
     if(this.nomeTema === ''){
       this.findAllTemas()
-      console.log('estou aqui no if')
+      
     }else{
       this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: Tema[]) => {
         
         this.listaTemas = resp
         console.log(this.listaTemas)
+        
       })
   
     }
@@ -114,11 +118,11 @@ export class FeedComponent implements OnInit {
   findByDescricaoPostagem(){
     if(this.descricao === ''){
       this.findAllPostagens()
-      console.log("estou aqui")
+      
     }else{
       this.postagemService.getByDescricaoPostagem(this.descricao).subscribe((resp: Postagem[]) =>{
         this.listaPostagens = resp
-        console.log(" depois do else")
+        
       })
     }
 
