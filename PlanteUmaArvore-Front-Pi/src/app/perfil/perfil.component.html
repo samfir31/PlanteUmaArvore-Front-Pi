@@ -1,25 +1,22 @@
 <!-- Perfil Lateral--> 
 <!--Img--> 
-<div class="container d-flex justify-content-center">
-    <div class="card border" style="width: 13rem;">
-        <div class="border-0">
-            <img class="card-img-top" src="https://image.freepik.com/vetores-gratis/menina-escrevendo-em-um-caderno_59690-295.jpg" alt="Imagem de capa do card">
+<div class="container d-flex justify-content-center mt-5">
+    <div class="card border-0 " style="width: 15rem; background-color: transparent;">
+        <div class="border-0 d-flex justify-content-center">
+            <img class="card-img-top rounded-circle w-75 d-flex justify-content-center" src="{{fotoUser}}" alt="Imagem de capa do card">
         </div>
     <!--/Img-->
     <!--Parte escrita-->
-        <div class="card-body">
+        <div class="card-body" style="background-color: transparent;">
             <div class="d-flex justify-content-center">
                 <h5 class="card-title" id="nome"></h5>
             </div>
             <div class="d-flex justify-content-center">
-                <p class="card-text">Nome</p>
+                <p class="card-text">{{nomeUser}}</p>
             </div>
             <div class="d-flex justify-content-center mt-3">
-                <p class="card-text">Email</p>
-            </div>        
-            <div class="container d-flex justify-content-center mt-3 mp-2 w-100">
-                <div class="btn btn btn-primary">facebook</div>        
-            </div>
+                <p class="card-text">{{email}}</p>
+            </div>                    
         </div>
     </div>  
     <!--/Parte escrita-->
