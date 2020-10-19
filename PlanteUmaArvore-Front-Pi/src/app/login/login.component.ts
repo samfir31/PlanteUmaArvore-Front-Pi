@@ -5,7 +5,6 @@ import { AuthService } from '../service/auth.service';
 import { ViewChild,ElementRef } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { AlertasService } from '../service/alertas.service';
-import { GoogleLoginProvider } from 'angularx-social-login';
 import { profile } from 'console';
 
 
