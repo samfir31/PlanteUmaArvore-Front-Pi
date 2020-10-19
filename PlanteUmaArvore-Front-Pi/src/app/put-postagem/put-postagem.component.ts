@@ -15,6 +15,7 @@ export class PutPostagemComponent implements OnInit {
 
     postagem: Postagem = new Postagem()
     idPost: number
+
     tema: Tema = new Tema()
     listaTemas: Tema[]
     idTema: number
@@ -48,21 +49,18 @@ export class PutPostagemComponent implements OnInit {
 
 
   salvar(){
-    this.tema.id =this.idTema
+    this.tema.id = this.idTema
     this.postagem.tema = this.tema
 
-   this.postagemService.putPostagem(this.postagem).subscribe((resp:Postagem) =>{
+    this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
       this.router.navigate(['/feed'])
       this.alert.showAlertSuccess('Postagem alterada com sucesso')
-
-   }, err => {
-     if (err.status == '500') {
-
-      this.alert.showAlertInfo('Preencha todos os campos corretamente antes de enviar')
-
-     } 
-     })
+    }, err => {
+      if (err.status == '500'){
+        this.alert.showAlertDanger('Preencha todos os campos corretamente antes de enviar!')
+      }
+    })
 
   }
 

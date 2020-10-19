@@ -23,7 +23,7 @@
             <div class="form-group m-0">
               <label class="text-monospace" for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um
                   novo</a></label>
-              <select name="tema" id='tema' class="form-control border-success rounded login-form-1" [(ngModel)]='tema.id' (change)='findByIdTema()'>
+              <select name="tema" id='tema' class="form-control border-success rounded login-form-1" [(ngModel)]='idTema' (change)='findByIdTema()'>
                 <option *ngFor='let item of listaTemas' value={{item.id}}>
                   {{item.nome}}
                 </option>
