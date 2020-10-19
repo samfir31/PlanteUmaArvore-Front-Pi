@@ -5,6 +5,8 @@ import { AuthService } from '../service/auth.service';
 import { ViewChild,ElementRef } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { AlertasService } from '../service/alertas.service';
+import { GoogleLoginProvider } from 'angularx-social-login';
+import { profile } from 'console';
 
 
 @Component({
@@ -28,8 +30,9 @@ export class LoginComponent implements OnInit {
   
    { }
 
-  ngOnInit() {        
-    this.iniciaGoogle();
+  ngOnInit() { 
+    this.auth2.disconnect(); 
+    this.iniciaGoogle(); 
   }
 
   iniciaGoogle() {
@@ -48,7 +51,11 @@ export class LoginComponent implements OnInit {
       js = d.createElement(s); js.id = id;
       js.src = "https://apis.google.com/js/platform.js?onload=googleSDKLoaded";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'google-jssdk'));
+      
+      
+    }(document, 'script', 'google-jssdk')); 
+    
+    
   }
 
   prepareLogin() {
@@ -59,9 +66,10 @@ export class LoginComponent implements OnInit {
         this.userLogin.senha = googleUser.getAuthResponse().id_token;
         (<HTMLInputElement>document.getElementById("email")).value = profile.getEmail();
         (<HTMLInputElement>document.getElementById("senha")).value = googleUser.getAuthResponse().id_token;
+        
       }, (error) => {
         this.alert.showAlertInfo(JSON.stringify(error, undefined, 2));
-      });
+      });     
   }
 
 
@@ -69,7 +77,9 @@ export class LoginComponent implements OnInit {
     this.authService.logar(this.userLogin).subscribe((resp: UserLogin)=>{
       this.userLogin = resp
       environment.token = this.userLogin.token
+      
       this.router.navigate(['/feed'])
+      
     })
 
 

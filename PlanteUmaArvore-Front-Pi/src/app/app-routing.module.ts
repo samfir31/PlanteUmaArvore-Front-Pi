@@ -26,10 +26,6 @@ const routes: Routes = [
   { path: 'delete-post/:id', component: DeletePostagemComponent},
   { path: 'delete-tema/:id', component: DeleteTemaComponent }
 
-  
-  
-  
-
 ];
 
 @NgModule({
