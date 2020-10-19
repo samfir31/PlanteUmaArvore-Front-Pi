@@ -29,8 +29,7 @@ export class LoginComponent implements OnInit {
   
    { }
 
-  ngOnInit() { 
-    this.auth2.disconnect(); 
+  ngOnInit() {     
     this.iniciaGoogle(); 
   }
 
@@ -66,6 +65,7 @@ export class LoginComponent implements OnInit {
         (<HTMLInputElement>document.getElementById("email")).value = profile.getEmail();
         (<HTMLInputElement>document.getElementById("senha")).value = googleUser.getAuthResponse().id_token;
         
+        
       }, (error) => {
         this.alert.showAlertInfo(JSON.stringify(error, undefined, 2));
       });     
@@ -75,8 +75,10 @@ export class LoginComponent implements OnInit {
   entrar(){
     this.authService.logar(this.userLogin).subscribe((resp: UserLogin)=>{
       this.userLogin = resp
-      environment.token = this.userLogin.token
-      
+      environment.token = this.userLogin.token      
+        environment.nome = this.userLogin.nome
+        environment.foto = this.userLogin.foto
+        environment.email = this.userLogin.email
       this.router.navigate(['/feed'])
       
     })
