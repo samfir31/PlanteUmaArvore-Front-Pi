@@ -25,21 +25,25 @@ export class CadastroComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.auth2.disconnect();         
     this.googleInitialize();
-  }
-
+  }  
 
   conferirSenha(event: any){
     this.senha = event.target.value
+  }
+  teste(){
+    this.alert.showAlertSuccess('Textttttt')   
   }
 
 cadastrar(){
     if (this.senha === this.usuario.senha){
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario)=>{
-        this.usuario = resp        
-        this.alert.showAlertSuccess('usuario cadastrado com sucesso')
-        this.googleInitialize();   
+        this.usuario = resp  
+              
+        this.alert.showAlertSuccess('usuario cadastrado com sucesso')           
         this.router.navigate(['/login']) 
+        
         
       })
 
@@ -69,8 +73,8 @@ cadastrar(){
       js = d.createElement(s); js.id = id;
       js.src = "https://apis.google.com/js/platform.js?onload=googleSDKLoaded";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'google-jssdk'));    
-  }
+    }(document, 'script', 'google-jssdk'));
+    }
 /*Inicialização do Login google*/
 
 /*get do Login google*/
@@ -89,6 +93,8 @@ cadastrar(){
         this.alert.showAlertSuccess(JSON.stringify(error, undefined, 2));
       });
   }
+
+  
 
   /*/get do Login google*/
   /*/Google Api*/

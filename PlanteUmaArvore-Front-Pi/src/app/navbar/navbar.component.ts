@@ -20,7 +20,8 @@ export class NavbarComponent implements OnInit {
   }
   sair() {
     this.router.navigate(['/login'])
-    environment.token = ''    
+    environment.token = ''
+    
   }
 
 }
