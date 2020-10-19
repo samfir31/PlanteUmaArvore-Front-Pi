@@ -27,7 +27,7 @@
     "@types/gapi": "0.0.39",
     "@types/gapi.auth2": "0.0.52",
     "angularx-social-login": "^3.2.2",
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
     "ngx-bootstrap": "^6.1.0",
     "ngx-order-pipe": "^2.1.0",

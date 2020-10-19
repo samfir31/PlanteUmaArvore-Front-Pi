@@ -33,3 +33,9 @@ ul.social-network {
   .footer-cor{
     background-color: #aeffd8;
 }
+
+.texto {
+  text-align: justify;
+  font-family: 'Trebuchet MS, sans-serif';
+  font-size: 17px;
+  }

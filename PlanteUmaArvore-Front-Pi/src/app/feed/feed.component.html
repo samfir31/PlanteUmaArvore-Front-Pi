@@ -1,4 +1,4 @@
-<div class="container-fluid w-100 cor-fundo ">
+<div class="container-fluid w-100 cor-fundo text-monospace font-weight-bold">
 
   <div class="row ">
 
@@ -79,9 +79,8 @@
                     <div class="row d-flex align-items-center">
                         <div class="col-md-8">                            
                           <h4 class="text-monospace">Tema: {{item.tema.nome}} </h4>
-                        </div>
-                        <div class="col-md-4 d-flex justify-content-end">
-
+                        </div>  
+                        <div class="col-md-4 d-flex justify-content-end">                          
                             <button class="mr-3 btn btn-outline-info" [routerLink]="['/editar-post', item.id]">
                                 Editar
                             </button>

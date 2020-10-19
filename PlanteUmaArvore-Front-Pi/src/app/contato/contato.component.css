@@ -11,3 +11,7 @@
     background-image: linear-gradient(180deg, #a9fbd7, #d7fdec);
 }
 
+.texto {
+    text-align: justify;
+    font-family: 'Trebuchet MS, sans-serif';
+}
