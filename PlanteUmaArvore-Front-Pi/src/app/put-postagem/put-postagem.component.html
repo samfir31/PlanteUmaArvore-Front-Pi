@@ -1,11 +1,15 @@
 <div class="container w-100">
 
+  
+
+
     <div class="row">
+
+    <div class="col-md-4">
+      <app-perfil> </app-perfil>
+    </div>
   
-      <div class="col-md-4">
-        <app-perfil> </app-perfil>
-      </div>
-  
+        
       <div class="col-md-8">
   
         <h3 class="text-center mb-4 text-monospace" >No que você esta pensando? </h3>
@@ -16,10 +20,10 @@
             [(ngModel)]='postagem.descricao'></textarea>
         </div>
   
-        <div class="row d-flex align-items-end">
+        
   
-          <div>
-          <div class="col-md-8">
+          <div class="row">
+          <div class="col-md-6">
             <div class="form-group m-0">
               <label class="text-monospace" for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um
                   novo</a></label>
@@ -29,11 +33,22 @@
                 </option>
               </select>
             </div>
+            
+            </div>
+            <div class="col-md-6"> 
+              <div class="form-group ">
+                <label for="tema">Link da midia</label>
+                <input type="texto" class="form-control border-dark rounded login-form-1" [(ngModel)]='postagem.midia'>
+              </div>
+            </div>
           </div>
-        </div>
+          
+        
   
-          <div class="col-md-6 d-flex justify-content-end">
+          <div class=" d-flex justify-content-center">
             <button type="button" class="btn btn-outline-info w-25" (click)="salvar()">Salvar</button>
           </div>
   
         </div>
+      </div>
+    </div>
