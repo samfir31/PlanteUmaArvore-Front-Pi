@@ -5,7 +5,6 @@ import { AuthService } from '../service/auth.service';
 import { ViewChild,ElementRef } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { AlertasService } from '../service/alertas.service';
-import { profile } from 'console';
 
 
 @Component({
@@ -65,7 +64,7 @@ export class LoginComponent implements OnInit {
         (<HTMLInputElement>document.getElementById("email")).value = profile.getEmail();
         (<HTMLInputElement>document.getElementById("senha")).value = googleUser.getAuthResponse().id_token;
         
-        
+        document.getElementById("teste").click();
       }, (error) => {
         this.alert.showAlertInfo(JSON.stringify(error, undefined, 2));
       });     
