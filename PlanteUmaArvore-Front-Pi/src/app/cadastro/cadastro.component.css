@@ -78,3 +78,7 @@
     text-align: justify;
     font-family: 'Trebuchet MS, sans-serif';
 }
+
+.ghost{
+    opacity: 0;
+}

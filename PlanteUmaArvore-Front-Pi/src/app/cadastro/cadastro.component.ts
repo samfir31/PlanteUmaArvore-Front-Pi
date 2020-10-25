@@ -40,7 +40,7 @@ cadastrar(){
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario)=>{
         this.usuario = resp  
         this.alert.showAlertSuccess('usuario cadastrado com sucesso')           
-        this.entrar();
+        document.getElementById("teste").click();
       })
 
     } else{
@@ -83,9 +83,11 @@ cadastrar(){
        this.usuario.foto = profile.getImageUrl() 
        this.userLogin.email = (profile.getEmail())
         this.userLogin.senha = googleUser.getAuthResponse().id_token;
+        (<HTMLInputElement>document.getElementById("linkFoto")).value = profile.getImageUrl();
+        (<HTMLInputElement>document.getElementById("nome")).value = profile.getName();
         (<HTMLInputElement>document.getElementById("email")).value = profile.getEmail();
         (<HTMLInputElement>document.getElementById("senha")).value = googleUser.getAuthResponse().id_token;
-        
+        (<HTMLInputElement>document.getElementById("senhaConf")).value = googleUser.getAuthResponse().id_token;
        this.cadastrar();
            
       }, (error) => {

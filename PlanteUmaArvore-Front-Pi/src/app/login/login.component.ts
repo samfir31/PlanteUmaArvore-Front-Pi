@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
         (<HTMLInputElement>document.getElementById("email")).value = profile.getEmail();
         (<HTMLInputElement>document.getElementById("senha")).value = googleUser.getAuthResponse().id_token;
         
-        
+        document.getElementById("teste").click();
       }, (error) => {
         this.alert.showAlertInfo(JSON.stringify(error, undefined, 2));
       });     
