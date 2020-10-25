@@ -4,6 +4,8 @@ import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 import { ViewChild,ElementRef } from '@angular/core'
 import { AlertasService } from '../service/alertas.service';
+import { UserLogin } from '../model/UserLogin';
+import { environment } from 'src/environments/environment.prod';
 
 
 @Component({
@@ -16,6 +18,7 @@ export class CadastroComponent implements OnInit {
   auth2: any
   usuario: Usuario = new Usuario()
   senha: string
+  userLogin: UserLogin = new UserLogin()
 
   constructor(
     private authService: AuthService,
@@ -24,34 +27,24 @@ export class CadastroComponent implements OnInit {
 
   ) { }
 
-  ngOnInit(): void {
-    this.auth2.disconnect();         
+  ngOnInit(): void {           
     this.googleInitialize();
   }  
 
   conferirSenha(event: any){
     this.senha = event.target.value
-  }
-  teste(){
-    this.alert.showAlertSuccess('Textttttt')   
-  }
+  }  
 
 cadastrar(){
     if (this.senha === this.usuario.senha){
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario)=>{
         this.usuario = resp  
-              
         this.alert.showAlertSuccess('usuario cadastrado com sucesso')           
-        this.router.navigate(['/login']) 
-        
-        
+        this.entrar();
       })
 
     } else{
-
       this.alert.showAlertInfo('Suas senhas não conferem')
-
-
     }    
   }
   /*Google Api*/
@@ -87,16 +80,31 @@ cadastrar(){
        this.usuario.nome = (profile.getName())
        this.senha = googleUser.getAuthResponse().id_token
        this.usuario.senha = googleUser.getAuthResponse().id_token  
-       this.usuario.foto = profile.getImageUrl()     
-       this.cadastrar();        
+       this.usuario.foto = profile.getImageUrl() 
+       this.userLogin.email = (profile.getEmail())
+        this.userLogin.senha = googleUser.getAuthResponse().id_token;
+        (<HTMLInputElement>document.getElementById("email")).value = profile.getEmail();
+        (<HTMLInputElement>document.getElementById("senha")).value = googleUser.getAuthResponse().id_token;
+        
+       this.cadastrar();
+           
       }, (error) => {
         this.alert.showAlertSuccess(JSON.stringify(error, undefined, 2));
       });
   }
-
-  
-
   /*/get do Login google*/
   /*/Google Api*/
+  entrar(){
+    this.authService.logar(this.userLogin).subscribe((resp: UserLogin)=>{
+      this.userLogin = resp
+      environment.token = this.userLogin.token      
+      environment.nome = this.userLogin.nome
+      environment.foto = this.userLogin.foto
+      environment.email = this.userLogin.email
+      this.router.navigate(['/feed'])
+      
+    })
 
+
+  }
 }
